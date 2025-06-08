@@ -1,5 +1,5 @@
 # ROV_PoseTracker
-
+# Filename `yaw3.py`
 
 # Optical Flow-Based Visual Odometry with Yaw Estimation
 
@@ -44,9 +44,9 @@ graph TB
     F --> G[Compute Essential Matrix: E = K.T * F * K]
     G --> H[Recover Rotation and Translation using cv2.recoverPose]
     H --> I["Convert Rotation to Euler angles (Yaw, Pitch, Roll)"]
-    I --> J[Accumulate total Yaw]
+    I --> J[Accumulate Yaw]
     J --> B
-    J --> K[Repeat until last image or user exit]
+    J --> K[Return Total Yaw]
 ```
 
 ---
@@ -108,15 +108,3 @@ Press `ESC` to interrupt at any time.
 - Currently handles **only yaw estimation**, but can be extended to full pose tracking
 
 ---
-
-## 📎 TODOs
-
-- Add visualization overlay of tracked points
-- Integrate IMU for better fusion
-- Handle scaling ambiguity for monocular depth
-
----
-
-## 📄 License
-
-MIT License. Free to use and modify.
